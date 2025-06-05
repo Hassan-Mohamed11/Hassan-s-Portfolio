@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+    <link rel="stylesheet" href="./Css/style.css">
+</head>
+<body>
+
+    <nav>
+        <a href="">Time</a>
+        <div>
+            <ul id="nav-links" class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+        <div id="ham" onclick="toggleMenu()">
+            ☰ 
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <div class="clock">
+                <span class="hrs" >00</span>
+                <span>:</span>
+                <span class="min" >00</span>
+                <span>:</span>
+                <span class="sec">00</span>
+                <div style="display: flex; width: 90%; justify-content: space-between; font-size: 16px; justify-self: center;">
+                    <span id="hrs">Hours</span>
+                    <span id="min">Minutes</span>
+                    <span id="sec">Seconds</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="./JS/script.js"></script>
+</body>
+</html>
