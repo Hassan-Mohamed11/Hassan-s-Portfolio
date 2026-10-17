@@ -337,8 +337,9 @@ article {
 .paragraph p {
     font-size: clamp(0.8rem, 2vw, 3rem);
     color: #323B4C;
+    margin-top: 12px;
     padding-bottom: 24px;
-    font-weight: 700;
+    font-weight: 500;
 }
 
 .box-container h1{
@@ -458,7 +459,7 @@ article {
 }
 
 .strip-text {
-    width: 650px;
+    width: 956px;
     font-size: clamp(1rem, 2vw, 3rem);
     margin-right: 20px;
     color: #323B4C;
@@ -467,7 +468,7 @@ article {
 }
 
 .strip-container ul {
-    animation: scroll 18s linear infinite;
+    animation: scroll 28s linear infinite;
     transform: translateX(140%);
 }
 
@@ -475,6 +476,7 @@ article {
     .strip-content {
         width: 50px;
         padding-right: 12px;
+        margin-right: 8px;
     }
 
     .strip-text {
@@ -486,7 +488,7 @@ article {
     }
 
   .strip-container ul {
-    animation: scroll 18s linear infinite;
+    animation: scroll 25s linear infinite;
     transform: translateX(70%);
 }
 }
@@ -494,7 +496,7 @@ article {
 @media (max-width: 1200px) {
 
   .strip-text {
-    width: 360px;
+    width: 432px;
   }
 
 }
@@ -526,14 +528,12 @@ article {
     border-radius: 8px;
     width: fit-content;
     font-weight: 400;
-    background-color: rgba(255, 255, 255, 0.85);
     padding: 16px;
-    box-shadow: 0 0 20px 0px;
 }
 
 .projects .projects-text-container h1 {
-    color: #323B4C;
-    font-size: clamp(2rem, 2vw, 2.5rem);
+    color: #ffffff;
+    font-size: clamp(2.5rem, 2.5vw, 3rem);
 }
 
 .projects .projects-text-container p {
@@ -541,15 +541,31 @@ article {
 }
 
 .projects-container {
-    width: 90%;
+    width: fit-content;
     height: 100%;
     margin: auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 24px;
+    justify-content: center;
     align-items: center;
-    justify-items: center;
-    column-gap: 40px;
-    row-gap: 40px;
+}
+
+.first-section {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.second-section {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 
 #berimbolo {
@@ -618,6 +634,43 @@ article {
 }
 
 #to-do-list:hover::before {
+    background-color: #457bdfbb;
+}
+
+#Spend-wise {
+    width: 100%;
+    height: 250px;
+    background-image: url(../Images/Assets/spend-wise.png);
+    background-position: center;
+    background-size: cover;
+    background-color: red;
+    position: relative;
+    border-radius: 8px;
+    transition: 1s ease;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#Spend-wise::before {
+    content: "Spend wise";
+    position: absolute;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 200%;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.802);
+    transition: 0.5s ease;
+    border-radius: 8px;
+}
+
+#Spend-wise:hover::before {
     background-color: #457bdfbb;
 }
 
@@ -698,62 +751,76 @@ article {
     box-shadow: 0px 0px 19px 0px;
 }
 
-.berimbolo-info {
+.fourth-card {
+    width: 300px;
+    height: 500px;
+    padding: 16px;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    border-radius: 12px;
+    box-shadow: 0px 0px 19px 0px;
+}
+
+.vague-info, .todo-list-info, .berimbolo-info, .spend-info  {
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
     text-align: left;
 }
 
-.vague-info, .todo-list-info {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    text-align: left;
-}
-
-.vague-info h1, .todo-list-info h1 {
+.vague-info h1, .todo-list-info h1, .berimbolo-info h1, .spend-info h1 {
     color: black;
     font-size: 30px;
 }
 
-.berimbolo-info h1 {
-    color: black;
-    font-size: 30px;
-}
 
-.vague-info p, .todo-list-info p {
+.vague-info p, .todo-list-info p, .spend-info p {
     color: #323B4C;
-    font-weight: 700;
+    font-weight: 400;
 }
 
 .berimbolo-info p {
     color: #323B4C;
-    font-weight: 700;
+    font-weight: 400;
 }
 
 
-.berimbolo-info a, .vague-info a, .todo-list-info a  {
+.berimbolo-info ~ a, .vague-info ~ a, .todo-list-info ~ a, .spend-info ~ a  {
     padding: 6px;
     font-size: 18px;
     border-radius: 2px;
     background: none;
     border-radius: 8px;
-    color: white;
-    background-color: #11006A;
+    color: #000F2C;
+    border: 3px solid #000F2C;
     width: fit-content;
     align-self: flex-end;
     padding: 6px 12px;
     transition: all 0.5s;
+    font-weight: 600;
 }
 
 .berimbolo-info a:hover {
     background-color: #2200ce;
 }
 
-@media (max-width: 1150px) {
+.technologies {
+    width: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.technologies span {
+    background-color: #457BDF;
+    padding: 6px;
+    border-radius: 10px;
+    margin-right: 4px;
+    margin-top: 6px;
+    color: white;
+}
+
+@media (max-width: 1318px) {
     .projects {
         height: fit-content;
         padding-bottom: 50px;
@@ -771,11 +838,8 @@ article {
     .projects-container {
         width: 90%;
         height: 100%;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-        column-gap: 0;
-        align-items: center;
-        justify-items: center;
+        display: flex;
+        flex-direction: row;
     }
 
 
